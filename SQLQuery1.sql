@@ -10,17 +10,17 @@ CREATE TABLE Instructors(
 	i_age int 
 );
 
+CREATE TABLE Students(
+	s_id int PRIMARY KEY,
+	s_name VARCHAR(50),
+	s_age int,
+);
 CREATE TABLE Courses(
 	c_id int PRIMARY KEY,
 	c_name VARCHAR(50), 
 	i_id int FOREIGN KEY REFERENCES Instructors(i_id),
 );
 
-CREATE TABLE Students(
-	s_id int PRIMARY KEY,
-	s_name VARCHAR(50),
-	s_age int,
-);
 
 CREATE TABLE Works_in(
 	d_id int REFERENCES Departments(d_id),
@@ -40,4 +40,9 @@ CREATE TABLE Enrolled(
 	PRIMARY KEY(s_id, c_id)
 
 );
+
+CREATE TABLE teach(
+	i_id int FOREIGN KEY REFERENCES Instructors(i_id),
+	c_id int FOREIGN KEY REFERENCES Courses(c_id),
+	);
 
