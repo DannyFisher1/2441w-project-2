@@ -45,4 +45,10 @@ CREATE TABLE teach(
 	i_id int FOREIGN KEY REFERENCES Instructors(i_id),
 	c_id int FOREIGN KEY REFERENCES Courses(c_id),
 	);
+	
+CREATE TABLE Offer(
+	d_id int FOREIGN KEY REFERENCES Departments(d_id), 
+	c_id int FOREIGN KEY REFERENCES Courses(c_id),
+	PRIMARY KEY(d_id,c_id),
+);
 
